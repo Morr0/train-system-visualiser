@@ -11,7 +11,6 @@ Building blocks include:
 - Turnout: is a track diverging into 2 tracks
 - Traffic Light: a track can have at most one traffic light. A traffic light can be a 2 way one.
 - Station: A container of platforms that each can have a train in them
-- Line: A container of 2 or more stations. A station can co-exist in many lines.
 - Service: A train route over a line. It determines directions of track movement.
 - Service Run: A running service
 
