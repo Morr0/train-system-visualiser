@@ -16,7 +16,6 @@ Building blocks include:
 
 ## Roadmap
 
-[ ] Introduce Basic Building Blocks
 [ ] Get a working version out
 
 ## Scripts
