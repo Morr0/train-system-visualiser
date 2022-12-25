@@ -29,6 +29,40 @@ describe('StationService', () => {
 				expect(enterResponse).toEqual({ canEnter: true });
 				expect(listResponse.serviceRunIdsByTrackId).toEqual({ track1: 'sr1' });
 			});
+
+			it('will be able to enter station at a different track when the other is occupied', () => {
+				// Arrange
+				const stationService = new StationService({
+					station: { id: 's1', trackIds: ['track1', 'track2'] },
+				});
+				const enterRequest1: EnterStationRequest = {
+					serviceRun: {
+						id: 'sr1',
+						service: { id: 's1', trackIdByStationId: { s1: 'track1' } },
+						train: { id: 't1' },
+					},
+				};
+				const enterResponse1 = stationService.enter(enterRequest1);
+
+				const enterRequest2: EnterStationRequest = {
+					serviceRun: {
+						id: 'sr2',
+						service: { id: 's2', trackIdByStationId: { s1: 'track2' } },
+						train: { id: 't2' },
+					},
+				};
+
+				// Act
+				const enterResponse2 = stationService.enter(enterRequest2);
+				const listResponse = stationService.listTracks({});
+
+				// Assert
+				expect(enterResponse2).toEqual({ canEnter: true });
+				expect(listResponse.serviceRunIdsByTrackId).toEqual({
+					track1: 'sr1',
+					track2: 'sr2',
+				});
+			});
 		});
 
 		describe('Occupied Track', () => {
