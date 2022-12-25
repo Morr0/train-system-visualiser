@@ -1,7 +1,12 @@
+import { MantineProvider } from '@mantine/core';
 import React from 'react';
 
 function App() {
-	return <div>Hello world</div>;
+	return (
+		<MantineProvider>
+			<span>Hello world</span>
+		</MantineProvider>
+	);
 }
 
 export default App;
