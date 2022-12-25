@@ -17,7 +17,6 @@ Building blocks include:
 
 ## Roadmap
 
-[ ] Introduce Deployment
 [ ] Introduce Basic Building Blocks
 [ ] Get a working version out
 
