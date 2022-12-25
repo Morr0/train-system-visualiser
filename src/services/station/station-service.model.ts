@@ -7,4 +7,16 @@ interface EnterStationResponse {
 	canEnter: boolean;
 }
 
-export type { EnterStationRequest, EnterStationResponse };
+interface ExitStationRequest {
+	serviceRun: ServiceRun;
+}
+interface ExitStationResponse {
+	canExit: boolean;
+}
+
+export type {
+	EnterStationRequest,
+	EnterStationResponse,
+	ExitStationRequest,
+	ExitStationResponse,
+};

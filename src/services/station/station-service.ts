@@ -2,6 +2,8 @@ import { ServiceRun, Station } from '../../models';
 import {
 	EnterStationRequest,
 	EnterStationResponse,
+	ExitStationRequest,
+	ExitStationResponse,
 } from './station-service.model';
 
 class StationService {
@@ -24,6 +26,12 @@ class StationService {
 
 		return {
 			canEnter: true,
+		};
+	}
+
+	public exit({}: ExitStationRequest): ExitStationResponse {
+		return {
+			canExit: true,
 		};
 	}
 }
